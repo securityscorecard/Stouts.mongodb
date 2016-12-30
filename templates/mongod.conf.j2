@@ -28,3 +28,7 @@ smallfiles = {{ mongodb_conf_smallfiles|to_nice_json|bool|lower }}
 replSet = {{ mongodb_conf_replSet }}
 replIndexPrefetch = {{ mongodb_conf_replIndexPrefetch }}
 {% endif %}
+sslMode = {{ mongodb_conf_sslmode }}
+{% if mongodb_conf_sslmode != 'disabled' %}
+sslPEMKeyFile = {{ mongodb_conf_sslpemkeyfile }}
+{% endif %}
